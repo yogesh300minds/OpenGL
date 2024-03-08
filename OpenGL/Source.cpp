@@ -7,7 +7,7 @@ using namespace std;
 void processInput(GLFWwindow* window);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
-// setting width and heigh of screen 
+// setting width and height of screen 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
@@ -60,7 +60,7 @@ int main()
 		return -1;
 	}
 
-	// compile vertex shader and check shader complile error
+	// compile vertex shader and check shader compile error
 	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
 	glCompileShader(vertexShader);
@@ -107,20 +107,21 @@ int main()
 	// set up vertex data (and buffer(s)) and configure vertex attributes
 	// ------------------------------------------------------------------
 	float vertices[] = {
-		//-0.5f, -0.5f, 0.0f, // left  
-		// 0.5f, -0.5f, 0.0f, // right 
-		// 0.0f,  0.5f, 0.0f  // top   
+		-0.5f, -0.5f, 0.0f, // left  
+		 0.5f, -0.5f, 0.0f, // right 
+		 0.0f,  0.5f, 0.0f  // top   
 
-		 0.5f,  0.5f, 0.0f,  // top right
-		 0.5f, -0.5f, 0.0f,  // bottom right
-		-0.5f, -0.5f, 0.0f,  // bottom left
-		-0.5f,  0.5f, 0.0f   // top left 
+		// 0.5f,  0.5f, 0.0f,  // top right
+		// 0.5f, -0.5f, 0.0f,  // bottom right
+		//-0.5f, -0.5f, 0.0f,  // bottom left
+		//-0.5f,  0.5f, 0.0f   // top left 
 
 	};
 
 	unsigned int indices[] = {  // note that we start from 0!
-		0, 1, 3,  // first Triangle
-		1, 2, 3   // second Triangle
+		0, 1, 2,  // first Triangle
+		//0, 1, 3,  // first rect Triangle
+		//1, 2, 3   // second rect Triangle
 	};
 
 	unsigned int VBO, VAO ,EBO;
