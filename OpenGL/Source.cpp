@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Shader.h"
 
+// Working on Textures
+
 using namespace std;
 
 void processInput(GLFWwindow* window);
